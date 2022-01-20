@@ -102,6 +102,10 @@ export const Access = () => {
 
 We produce other utility functions as well, see `AlertContext.Provider` value in the code if you have more complex use cases. You can also submit PRs adding more examples to this readme.
 
+## Changes
+
+If you want to keep your project up-to-date with the changes made here, read our [CHANGELOG](CHANGELOG.md).
+
 ## Limitations
 
 N/A
