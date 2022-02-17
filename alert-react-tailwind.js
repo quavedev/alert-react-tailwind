@@ -57,9 +57,6 @@ export const AlertProvider = ({ children, ...rest }) => {
 
     setIsOpen(true);
     clearTimeoutId();
-    console.log(`autoCloseTimeout`, autoCloseTimeoutParam);
-
-    console.log(`settings`, settings);
 
     const autoCloseTimeout = autoCloseTimeoutParam || settings?.autoCloseTimeout;
     if (autoCloseTimeout) {

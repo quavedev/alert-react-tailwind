@@ -3,7 +3,7 @@
 Package.describe({
   name: 'quave:alert-react-tailwind',
   summary: 'Alert for React & Tailwind apps',
-  version: '1.0.3',
+  version: '1.1.0',
   git: 'https://github.com/quavedev/alert-react-tailwind',
 });
 
