@@ -28,7 +28,6 @@ const AlertContext = React.createContext({
 });
 
 export const AlertProvider = ({ children, ...rest }) => {
-  const { autoCloseTimeout: autoCloseTimeoutParam } = rest;
   const [isOpen, setIsOpen] = useState(rest.isOpen);
   const [message, setMessage] = useState(rest.message);
   const [title, setTitle] = useState(rest.title);
@@ -42,6 +41,7 @@ export const AlertProvider = ({ children, ...rest }) => {
   };
   const openAlert = args => {
     const {
+      autoCloseTimeout: autoCloseTimeoutParam,
       message: messageParam,
       route: routeParam,
       buttonLabel: buttonLabelParam,
@@ -57,6 +57,10 @@ export const AlertProvider = ({ children, ...rest }) => {
 
     setIsOpen(true);
     clearTimeoutId();
+    console.log(`autoCloseTimeout`, autoCloseTimeoutParam);
+
+    console.log(`settings`, settings);
+
     const autoCloseTimeout = autoCloseTimeoutParam || settings?.autoCloseTimeout;
     if (autoCloseTimeout) {
       timeoutId = setTimeout(() => {

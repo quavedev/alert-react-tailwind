@@ -7,7 +7,7 @@ Package.describe({
   git: 'https://github.com/quavedev/alert-react-tailwind',
 });
 
-Package.onUse(api => {
+Package.onUse((api) => {
   api.versionsFrom('2.5.3');
 
   api.use('ecmascript');
