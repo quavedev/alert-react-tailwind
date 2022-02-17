@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.0.3 (2022-02-17)
+## 1.1.0 (2022-02-17)
 
 - Implements `autoCloseTimeout`.
   - You can specify in the Meteor settings, like:
@@ -16,10 +16,6 @@
   }
   ```
   - You can also provide `autoCloseTimeout` option in `openAlert` function.`
-  
-## 1.0.2 (2022-02-17)
-
-- Discarded version
 
 ## 1.0.1 (2022-01-19)
 
