@@ -1,9 +1,22 @@
 import React, { Fragment, useContext, useState } from 'react';
+import { getSettings } from "meteor/quave:settings";
 import { useHistory } from 'react-router-dom';
 import { Transition } from '@headlessui/react';
 import InboxIcon from '@heroicons/react/outline/InboxIcon';
 import ExclamationCircleIcon from '@heroicons/react/outline/ExclamationCircleIcon';
 import XIcon from '@heroicons/react/solid/XIcon';
+
+const PACKAGE_NAME = "quave:alert-react-tailwind";
+
+const settings = getSettings({ packageName: PACKAGE_NAME });
+
+let timeoutId = null;
+const clearTimeoutId = () => {
+  if (timeoutId) {
+    clearTimeout(timeoutId);
+    timeoutId = null;
+  }
+};
 
 const AlertContext = React.createContext({
   isOpen: false,
@@ -15,6 +28,7 @@ const AlertContext = React.createContext({
 });
 
 export const AlertProvider = ({ children, ...rest }) => {
+  const { autoCloseTimeout: autoCloseTimeoutParam } = rest;
   const [isOpen, setIsOpen] = useState(rest.isOpen);
   const [message, setMessage] = useState(rest.message);
   const [title, setTitle] = useState(rest.title);
@@ -22,6 +36,10 @@ export const AlertProvider = ({ children, ...rest }) => {
   const [buttonLabel, setButtonLabel] = useState(rest.buttonLabel);
   const [isError, setIsError] = useState(rest.isError);
 
+  const closeAlert = () => {
+    setIsOpen(false);
+    clearTimeoutId();
+  };
   const openAlert = args => {
     const {
       message: messageParam,
@@ -38,14 +56,17 @@ export const AlertProvider = ({ children, ...rest }) => {
         : args;
 
     setIsOpen(true);
+    clearTimeoutId();
+    const autoCloseTimeout = autoCloseTimeoutParam || settings?.autoCloseTimeout;
+    if (autoCloseTimeout) {
+      timeoutId = setTimeout(() => {
+        closeAlert();
+      }, autoCloseTimeout);
+    }
     setMessage(messageParam);
     setRoute(routeParam || '');
     setButtonLabel(buttonLabelParam || '');
     setIsError(isErrorParam || false);
-  };
-
-  const closeAlert = () => {
-    setIsOpen(false);
   };
 
   return (
