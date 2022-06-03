@@ -4,6 +4,8 @@
 
 - Upgrades to React Router v6. As `useHistory` is not available anymore this is a breaking change.
 
+If you are not using React Router v6 don't upgrade.
+
 ## 1.1.0 (2022-02-17)
 
 - Implements `autoCloseTimeout`.
