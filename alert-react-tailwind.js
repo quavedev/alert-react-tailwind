@@ -1,6 +1,6 @@
 import React, { Fragment, useContext, useState } from 'react';
 import { getSettings } from "meteor/quave:settings";
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Transition } from '@headlessui/react';
 import InboxIcon from '@heroicons/react/outline/InboxIcon';
 import ExclamationCircleIcon from '@heroicons/react/outline/ExclamationCircleIcon';
@@ -103,7 +103,7 @@ export const Alert = () => {
     buttonLabel,
     isError,
   } = useAlert();
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const clear = () => {
     setMessage('');
@@ -113,7 +113,7 @@ export const Alert = () => {
 
   const onButtonClick = () => {
     if (route) {
-      history.push(route);
+      navigate(route);
       clear();
     }
   };

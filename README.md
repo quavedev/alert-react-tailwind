@@ -72,7 +72,7 @@ If you want to show an alert, you need to call `openAlert`, this function is pro
 
 ```javascript
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Passwordless } from 'meteor/quave:accounts-passwordless-react';
 import { useLoggedUser } from 'meteor/quave:logged-user-react';
 import { useAlert } from 'meteor/quave:alert-react-tailwind';
@@ -82,10 +82,10 @@ import { RoutePaths } from '../general/RoutePaths';
 export const Access = () => {
   const { openAlert } = useAlert();
   const { loggedUser } = useLoggedUser();
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const onEnterToken = () => {
-    history.push(RoutePaths.HOME);
+    navigate(RoutePaths.HOME);
     openAlert('Welcome!');
   };
 
@@ -95,7 +95,7 @@ export const Access = () => {
         <h3 className="text-lg px-3 py-2 text-base font-medium">
           You are already authenticated.
         </h3>
-        <button onClick={() => history.push(RoutePaths.HOME)} type="button">
+        <button onClick={() => navigate(RoutePaths.HOME)} type="button">
           Go Home
         </button>
       </div>
@@ -105,7 +105,7 @@ export const Access = () => {
     <div className="flex flex-col items-center flex-grow">
       <Passwordless onEnterToken={onEnterToken} />
       <a
-        onClick={() => history.push(RoutePaths.HOME)}
+        onClick={() => navigate(RoutePaths.HOME)}
         className="mt-5 text-base font-medium text-indigo-700 hover:text-indigo-600 cursor-pointer"
       >
         <span aria-hidden="true"> &rarr;</span> Back to Home
