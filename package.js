@@ -3,12 +3,12 @@
 Package.describe({
   name: 'quave:alert-react-tailwind',
   summary: 'Alert for React & Tailwind apps',
-  version: '1.1.0',
+  version: '2.0.0',
   git: 'https://github.com/quavedev/alert-react-tailwind',
 });
 
 Package.onUse((api) => {
-  api.versionsFrom('2.5.3');
+  api.versionsFrom('2.7.3');
 
   api.use('ecmascript');
   api.use('quave:settings@1.0.0');

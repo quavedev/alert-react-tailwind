@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.0 (2022-06-03)
+
+- Upgrades to React Router v6. As `useHistory` is not available anymore this is a breaking change.
+
 ## 1.1.0 (2022-02-17)
 
 - Implements `autoCloseTimeout`.
