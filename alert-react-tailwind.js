@@ -2,9 +2,9 @@ import React, { Fragment, useContext, useState } from 'react';
 import { getSettings } from "meteor/quave:settings";
 import { useNavigate } from 'react-router-dom';
 import { Transition } from '@headlessui/react';
-import InboxIcon from '@heroicons/react/outline/InboxIcon';
-import ExclamationCircleIcon from '@heroicons/react/outline/ExclamationCircleIcon';
-import XIcon from '@heroicons/react/solid/XIcon';
+import InboxIcon from '@heroicons/react/24/outline/InboxIcon';
+import ExclamationCircleIcon from '@heroicons/react/24/outline/ExclamationCircleIcon';
+import XMarkIcon from '@heroicons/react/24/solid/XMarkIcon';
 
 const PACKAGE_NAME = "quave:alert-react-tailwind";
 
@@ -185,7 +185,7 @@ export const Alert = () => {
                     onClick={clear}
                   >
                     <span className="sr-only">close</span>
-                    <XIcon className="h-5 w-5" aria-hidden="true" />
+                    <XMarkIcon className="h-5 w-5" aria-hidden="true" />
                   </button>
                 </div>
               </div>

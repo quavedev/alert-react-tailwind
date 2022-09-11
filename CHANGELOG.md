@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.0.0 (2022-09-11)
+
+- Upgrades to `@heroicons/react` 2.0.10. As all the icons locations were changed this is a breaking change.
+
+If you are not using `@heroicons/react` 2 don't upgrade.
+
 ## 2.0.0 (2022-06-03)
 
 - Upgrades to React Router v6. As `useHistory` is not available anymore this is a breaking change.

@@ -18,11 +18,11 @@ meteor add quave:alert-react-tailwind
 
 You should have the following npm dependencies in your project, the versions listed below are the tested versions:
 
-- react@17.0.2
-- react-dom@17.0.2
-- react-router-dom@5.3.0
-- @headlessui/react@1.4.3
-- @heroicons/react@1.0.5
+- react@18.2.0
+- react-dom@18.2.0
+- react-router-dom@6.3.0
+- @headlessui/react@1.7.0
+- @heroicons/react@2.0.10
 
 ## Usage
 
