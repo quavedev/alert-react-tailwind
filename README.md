@@ -1,5 +1,7 @@
 # quave:alert-react-tailwind
 
+### MIGRATED TO https://github.com/quavedev/meteor-packages/tree/main/alert-react-tailwind
+
 `quave:alert-react-tailwind` is a Meteor package that provides a plug-and-play alert system for React with TailwindCSS.
 
 ## Why
